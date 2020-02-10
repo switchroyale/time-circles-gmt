@@ -1,0 +1,43 @@
+<!-- TimeCircles (http://git.wimbarelds.nl/TimeCircles/) -->
+<link rel="stylesheet" href="TimeCircles.css">
+<script src="TimeCircles.js"></script>
+
+<div id="DateCountdown" data-date="Mon Mar 16 2020 00:00:00 GMT-7" style="width: 100%;"></div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#DateCountdown").TimeCircles({
+			"animation": "ticks",
+			"bg_width": 0.2,
+			"fg_width": 0.03,
+			"circle_bg_color": "#cccccc",
+			"time": {
+				"Days": {
+					"text": "Days",
+					"color": "#bc3f53",
+					"show": true
+				},
+				"Hours": {
+					"text": "Hours",
+					"color": "#bc3f53",
+					"show": true
+				},
+				"Minutes": {
+					"text": "Minutes",
+					"color": "#bc3f53",
+					"show": true
+				},
+				"Seconds": {
+					"text": "Seconds",
+					"color": "#bc3f53",
+					"show": true
+				}
+			}
+		});
+		
+		// Resize countdown clock on window resize.
+		$(window).on('resize', function() {
+			$("#DateCountdown").TimeCircles().rebuild();
+		});
+	});
+</script>
